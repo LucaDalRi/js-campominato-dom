@@ -55,7 +55,7 @@ function generaCelle () {
 
         containerCelle.append(nuovaCella);
         
-    }
+    };
     
 };
 
@@ -72,12 +72,13 @@ function creaNuovaCella() {
     
         function () {
 
-            if(this.classList.contains('clicked')){
+            if(this.classList.contains('clicked')) {
                 this.classList.remove('clicked');
-            };
+            }
+
             else{
                 this.classList.add('clicked');
-            };
+            }
 
         });
 
@@ -106,7 +107,7 @@ function creaNuovaCella() {
                     
                     break;
                     
-                };
+                }
                 // se supero l`obiettivo di 16 celle per vincere allerto 
                 else if (counterCelle > 15) {
                     
@@ -114,13 +115,13 @@ function creaNuovaCella() {
                     
                     break
                     
-                };
+                }
                 // Se il numero bomba è diverso da quello cliccato coloro la cella di verde
                 else {
 
                     cella.classList.add('verde');
 
-                };
+                }
             };
             
         });
@@ -151,13 +152,13 @@ function creaNuovaCella() {
 
     if(randomNumber % 2 == 0){
         cella.classList.add('even');
-    };
+    }
 
     // se non è pari aggiungo la classe dispari
 
     else {
         cella.classList.add('odd');
-    };
+    }
 
     return cella;
     
