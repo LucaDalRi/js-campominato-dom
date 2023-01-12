@@ -4,6 +4,8 @@ const containerCelle = document.getElementById('container-celle');
 
 let counterCelle = 0;
 
+let numeroInFila = 0;
+
 const numeriGenerati = [];
 
 const arrayBombe = []; 
@@ -13,7 +15,6 @@ const arrayBombe = [];
 bottoneDom.addEventListener('click' , numeroUnoSedici);
 
 function numeroUnoSedici() {
-
 
     let randomNumberSedici = getRandomNumber(1, 100);
     
@@ -31,7 +32,7 @@ function numeroUnoSedici() {
 
     }
 
-    console.log('Numeri bombe ' + arrayBombe);
+    console.log('Numeri delle bombe ' + arrayBombe);
 }
 
 
@@ -86,15 +87,18 @@ function creaNuovaCella() {
 
         cella.addEventListener('click' ,
 
+        // Controllo se le celle cliccate sono meno di 16
         
         function () {
-
+            
             counterCelle++
-
+            
             document.getElementById('punteggio').innerHTML = counterCelle;
             
             for (let i = 0; i < 16; i++) {
                 
+                // se il numero cliccato corrisponde al numero presente nell`array delle bombe coloro di rosso la cella e allerto della perdita 
+
                 if (arrayBombe[i] == cella.innerText) {
                     
                     cella.classList.add('rosso');
@@ -104,13 +108,15 @@ function creaNuovaCella() {
                     break;
                     
                 }
+                // se supero l`obiettivo di 16 celle per vincere allerto 
                 else if (counterCelle > 15) {
                     
                     alert('Hai vinto!');
-
+                    
                     break
                     
                 }
+                // Se il numero bomba è diverso da quello cliccato coloro la cella di verde
                 else {
 
                     cella.classList.add('verde');
@@ -131,8 +137,16 @@ function creaNuovaCella() {
     //pusho il numero generato nell`array numeriGenerati
 
     numeriGenerati.push(randomNumber);
+
+    // ciclo per scrivere i numeri da 1 a 100 nelle celle in fila 
+
+    if(numeroInFila < 101) {
+        
+        numeroInFila++;
+        
+    };
     
-    cella.append(randomNumber);
+    cella.append(numeroInFila);
 
     // se il mio numero random è pari aggiungo alla cella la classe even
 
