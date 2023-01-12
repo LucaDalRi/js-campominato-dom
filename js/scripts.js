@@ -80,9 +80,34 @@ function creaNuovaCella() {
                 this.classList.add('clicked');
             }
 
-        }
-    
-    );
+        });
+
+        // check se il numero bomba(arrayBomba) corrisponde al numero cliccato dal giocatore
+
+        cella.addEventListener('click' ,
+
+        function () {
+
+            for (let i = 0; i < 16; i++) {
+
+                if (arrayBombe[i] == cella.innerText) {
+
+                    cella.classList.add('rosso');
+
+                    alert('Hai perso!');
+                    
+                    // break;
+                    
+                }
+                else {
+
+                    cella.classList.add('verde');
+
+                }
+                
+            
+            }
+        });
 
     // genero un numero random, ma se il numero generato è già incluso nel mio array numeriGenerati continuo a creare un numero finchè non saranno tutti diversi
 
@@ -90,7 +115,7 @@ function creaNuovaCella() {
 
     while(numeriGenerati.includes(randomNumber)){
         randomNumber = getRandomNumber(1, 100);
-    }
+    };
 
     //pusho il numero generato nell`array numeriGenerati
 
@@ -112,6 +137,8 @@ function creaNuovaCella() {
 
 
     return cella;
+
+    
     
 };
 
@@ -136,6 +163,27 @@ function selettoreCelle (){
     console.log(celleSelezionate);
 
 }
+
+// check se le celle hanno un numero perdente 
+
+// cella.addEventListener(click , checkCella);
+
+// function checkCella() {
+
+//     if (cella.innerText == celleSelezionate) {
+
+//         console.log('Hai perso!');
+
+//     }
+//     else {
+
+//         console.log('Hai vinto!');
+
+//     }
+
+
+
+// }
 
 
 

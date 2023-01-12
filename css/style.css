@@ -44,3 +44,15 @@ main{
     justify-content: center;
     align-items: center;
 }
+
+.verde{
+
+    background-color: green;
+
+}
+
+.rosso{
+
+    background-color: red;
+
+}
