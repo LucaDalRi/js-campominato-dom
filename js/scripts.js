@@ -35,12 +35,11 @@ function numeroUnoSedici() {
     console.log('Numeri delle bombe ' + arrayBombe);
 }
 
-
 // genero un numero random da min a max 
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 // al click appendo x celle al containerCelle (il mio div container per le celle) chiamando la funzione creaNuovaCella 
 
@@ -75,10 +74,10 @@ function creaNuovaCella() {
 
             if(this.classList.contains('clicked')){
                 this.classList.remove('clicked');
-            }
+            };
             else{
                 this.classList.add('clicked');
-            }
+            };
 
         });
 
@@ -107,7 +106,7 @@ function creaNuovaCella() {
                     
                     break;
                     
-                }
+                };
                 // se supero l`obiettivo di 16 celle per vincere allerto 
                 else if (counterCelle > 15) {
                     
@@ -115,14 +114,14 @@ function creaNuovaCella() {
                     
                     break
                     
-                }
+                };
                 // Se il numero bomba è diverso da quello cliccato coloro la cella di verde
                 else {
 
                     cella.classList.add('verde');
 
-                }
-            }
+                };
+            };
             
         });
 
@@ -152,13 +151,13 @@ function creaNuovaCella() {
 
     if(randomNumber % 2 == 0){
         cella.classList.add('even');
-    }
+    };
 
     // se non è pari aggiungo la classe dispari
 
     else {
         cella.classList.add('odd');
-    }
+    };
 
     return cella;
     
@@ -180,16 +179,5 @@ function selettoreCelle (){
 
         celleSelezionate = getRandomNumber(1, 100);
 
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
+    };
+};
