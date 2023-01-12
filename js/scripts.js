@@ -2,6 +2,7 @@ const bottoneDom = document.getElementById("bottone-sul-dom");
 
 const containerCelle = document.getElementById('container-celle');
 
+let counterCelle = 0;
 
 const numeriGenerati = [];
 
@@ -71,8 +72,6 @@ function creaNuovaCella() {
     
         function () {
 
-            console.log(cella.innerText);
-
             if(this.classList.contains('clicked')){
                 this.classList.remove('clicked');
             }
@@ -83,20 +82,33 @@ function creaNuovaCella() {
         });
 
         // check se il numero bomba(arrayBomba) corrisponde al numero cliccato dal giocatore
+        
 
         cella.addEventListener('click' ,
 
+        
         function () {
 
+            counterCelle++
+
+            document.getElementById('punteggio').innerHTML = counterCelle;
+            
             for (let i = 0; i < 16; i++) {
-
+                
                 if (arrayBombe[i] == cella.innerText) {
-
+                    
                     cella.classList.add('rosso');
-
+                    
                     alert('Hai perso!');
                     
-                    // break;
+                    break;
+                    
+                }
+                else if (counterCelle > 15) {
+                    
+                    alert('Hai vinto!');
+
+                    break
                     
                 }
                 else {
@@ -104,9 +116,8 @@ function creaNuovaCella() {
                     cella.classList.add('verde');
 
                 }
-                
-            
             }
+            
         });
 
     // genero un numero random, ma se il numero generato è già incluso nel mio array numeriGenerati continuo a creare un numero finchè non saranno tutti diversi
@@ -135,10 +146,7 @@ function creaNuovaCella() {
         cella.classList.add('odd');
     }
 
-
     return cella;
-
-    
     
 };
 
@@ -160,30 +168,8 @@ function selettoreCelle (){
 
     }
 
-    console.log(celleSelezionate);
-
 }
 
-// check se le celle hanno un numero perdente 
-
-// cella.addEventListener(click , checkCella);
-
-// function checkCella() {
-
-//     if (cella.innerText == celleSelezionate) {
-
-//         console.log('Hai perso!');
-
-//     }
-//     else {
-
-//         console.log('Hai vinto!');
-
-//     }
-
-
-
-// }
 
 
 
