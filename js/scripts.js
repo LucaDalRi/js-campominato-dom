@@ -109,7 +109,7 @@ function creaNuovaCella() {
                     
                 }
                 // se supero l`obiettivo di 16 celle per vincere allerto 
-                else if (counterCelle > 15) {
+                else if (counterCelle > 83) {
                     
                     alert('Hai vinto!');
                     
